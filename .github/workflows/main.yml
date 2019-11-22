@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: 
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+      
+    - name: "Pack and Push"
+      shell: pwsh
+      run: |
+        #Install Choco
+        Set-ExecutionPolicy Bypass -Scope Process -Force;
+        iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+        
+        # Pack up
+        choco pack
+        
+        # Push
+        choco push (Resolve-Path *.nupkg) --api-key=$env:CHOCO_API_KEY -y
+        
