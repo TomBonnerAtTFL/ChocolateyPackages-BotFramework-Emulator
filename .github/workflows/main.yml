@@ -8,7 +8,7 @@ on:
 jobs:
   build:
 
-    runs-on: [windows-latest]
+    runs-on: [windows-2019]
 
     steps:
     - uses: actions/checkout@v1
@@ -23,6 +23,8 @@ jobs:
         # Pack up
         choco pack
         
-        # Push
-        choco push (Resolve-Path *.nupkg) --api-key=$env:CHOCO_API_KEY -y
+        # Set Key
+        choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
         
+        # Push
+        choco push (Resolve-Path *.nupkg) --source https://push.chocolatey.org/
