@@ -12,6 +12,7 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/microsoft/BotFramework-Emulator</projectSourceUrl>
     <bugTrackerUrl>https://github.com/microsoft/BotFramework-Emulator/issues</bugTrackerUrl>
+    <docsUrl>https://aka.ms/botemulator</docsUrl>
     <tags>botframeworkemulator bot-framework-emulator</tags>
     <summary>The Bot Framework Emulator is a desktop application that allows bot developers to test and debug bots built using the Bot Framework SDK. You can use the Bot Framework Emulator to test bots running either locally on your machine or connect to bots running remotely through a tunnel.</summary>
     <description>The Bot Framework Emulator is a desktop application that allows bot developers to test and debug bots built using the Bot Framework SDK. You can use the Bot Framework Emulator to test bots running either locally on your machine or connect to bots running remotely through a tunnel.</description>
